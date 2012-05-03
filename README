@@ -1,0 +1,35 @@
+==================================================
+== IXbase バンドル v0.2a  <2012/05/03>          ==
+==           by「ZR」（八登 崇之/Takayuki YATO）==
+==                      <zrbabbler@yahoo.co.jp> ==
+==================================================
+(This file is encoded in UTF-8,)
+
+■ 対応環境
+
+    ・LuaLaTeX（LuaTeX 0.65 版以降）
+    ・前提パッケージ：
+      - etoolbox
+      - luatexbase
+
+■ 本ソフトウェアの作者のサイト
+
+    En toi Pythmeni tes TeXnopoleos ～電脳世界の奥底にて～
+    http://zrbabbler.sp.land.to/
+
+■ インストール
+
+    TDS 1.1 に従ったシステムでは、各ファイルを次の場所に移動する。
+    ・*.sty   → $TEXMF/tex/lualatex/IXbase/
+
+    W32TeX を C:\usr\local にインストールした場合の例。
+    ・*.sty   → C:\usr\local\share\texmf-local\tex\lualatex\IXbase
+
+----------------------------------------
+
+■ 更新履歴
+
+Version 0.2a <2012/05/03>
+  - 最初の公開版。
+
+W# EOF

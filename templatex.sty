@@ -1,0 +1,41 @@
+%
+% templatex.sty
+%
+
+%% package declaration
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{templatex}[2012/05/03 v0.2]
+
+%% preparation
+\def\ixtpx@pkgname{templatex}
+\def\ixtpx@error{\PackageError\ixtpx@pkgname}
+
+%% prereqeuisites
+\RequirePackage{ixbase-core,ixbase-spenv}
+  % If ixbase-spenv did bombout, so does this.
+\ifx\SPEString\@undefined
+\expandafter\endinput\fi\relax
+% load ixsst library
+\directlua{
+ixsst = require "ixsst"
+tex.count["@tempcnta"] = (ixsst and 1 or 0)
+}
+\ifnum\@tempcnta=\z@
+\expandafter\endinput\fi\relax
+
+%------------------- main
+
+\directlua{
+function templatex(str)
+  local t = ixsst.compile(str)
+  print(ixsst.to_code(str))
+  ixbase.print(ixsst.compile(str):exec(_G))
+end
+}
+\DeclareStringProcessEnvironment{templatex}{%
+  \directlua{templatex(\SPEString{#1})}%
+}
+
+%------------------- done
+\endinput
+%% EOF
