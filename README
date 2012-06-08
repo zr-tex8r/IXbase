@@ -1,35 +1,41 @@
+IXbase パッケージ
+
+このバンドルにあった一部のパッケージは廃止となり、同等の機能をもった
+ものが BXluatool パッケージバンドルで提供される。
+
+  - ixbase-core   → bxluafacade パッケージ
+  - ixbase-spenv  → bxluavienv パッケージ
+
+現在このバンドルは以下のファイルを含んでいる。
+
+  - ixbase0.sty ： （LaTeX）ixbase0 パッケージ 0.1b 版<2010/07/24>
+    [対象環境: LuaLaTeX（LuaTeX 0.65 版以上）]
+    旧式の Lua プログラミング支援パッケージ。
+    以下の Web ページ（LuaLaTeX における Lua プログラミングを解説した
+    もの）において必要な機能を提供するために作られた。現在では、
+    BXluatool にあるパッケージ群が相当する機能を提供する。
+
+    「思わず Lua で LaTeX してみた」
+    http://zrbabbler.sp.land.to/lualatexlua.html
+    http://zrbabbler.sp.land.to/lualatexlua2.html
+
+  - ixsst.lua ： （Lua）ixsst モジュール 0.3 版<2012/05/01>
+    [対象環境: Lua 5.1, 5.2 版]
+    簡易テンプレートエンジンのモジュール。上掲の解説記事において、
+    「テンプレート的 LaTeX」（Lua を埋め込みスクリプトとする LaTeX
+    環境）を実現するために使われている。
+
+  - templatex.sty ： templatex パッケージ 0.2c 版<2012/06/05>
+    [対象環境: LuaLaTeX（LuaTeX 0.65 版以上）]
+    上述の「テンプレート的 LaTeX」を発展させてパッケージ化したもの。
+    ixsst モジュールと bxluavienv パッケージを用いて実装されている。
+    このパッケージは bxluavienv のサンプルとして公開されている。
+    より高機能な「テンプレート的 LaTeX」は BXluaembed パッケージと
+    して提供される（予定）。
+
 ==================================================
-== IXbase バンドル v0.2a  <2012/05/03>          ==
-==           by「ZR」（八登 崇之/Takayuki YATO）==
-==                      <zrbabbler@yahoo.co.jp> ==
-==================================================
-(This file is encoded in UTF-8,)
-
-■ 対応環境
-
-    ・LuaLaTeX（LuaTeX 0.65 版以降）
-    ・前提パッケージ：
-      - etoolbox
-      - luatexbase
-
-■ 本ソフトウェアの作者のサイト
-
-    En toi Pythmeni tes TeXnopoleos ～電脳世界の奥底にて～
-    http://zrbabbler.sp.land.to/
-
-■ インストール
-
-    TDS 1.1 に従ったシステムでは、各ファイルを次の場所に移動する。
-    ・*.sty   → $TEXMF/tex/lualatex/IXbase/
-
-    W32TeX を C:\usr\local にインストールした場合の例。
-    ・*.sty   → C:\usr\local\share\texmf-local\tex\lualatex\IXbase
-
-----------------------------------------
-
-■ 更新履歴
-
-Version 0.2a <2012/05/03>
-  - 最初の公開版。
-
-W# EOF
+八登 崇之 (Takayuki YATO; aka. "Z.R.")
+En toi Pythmeni tes TeXnopoleos ～電脳世界の奥底にて～
+http://zrbabbler.sp.land.to/
+マクロツイーター
+http://d.hatena.ne.jp/zrbabbler/

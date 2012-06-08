@@ -4,14 +4,14 @@
 
 %% package declaration
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{templatex}[2012/05/03 v0.2]
+\ProvidesPackage{templatex}[2012/06/05 v0.2c]
 
 %% preparation
 \def\ixtpx@pkgname{templatex}
 \def\ixtpx@error{\PackageError\ixtpx@pkgname}
 
 %% prereqeuisites
-\RequirePackage{ixbase-core,ixbase-spenv}
+\RequirePackage{bxluafacade,bxluavienv}
   % If ixbase-spenv did bombout, so does this.
 \ifx\SPEString\@undefined
 \expandafter\endinput\fi\relax
@@ -28,11 +28,10 @@ tex.count["@tempcnta"] = (ixsst and 1 or 0)
 \directlua{
 function templatex(str)
   local t = ixsst.compile(str)
-  print(ixsst.to_code(str))
   ixbase.print(ixsst.compile(str):exec(_G))
 end
 }
-\DeclareStringProcessEnvironment{templatex}{%
+\DeclareVerbInputEnvironment{templatex}{%
   \directlua{templatex(\SPEString{#1})}%
 }
 
